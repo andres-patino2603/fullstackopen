@@ -9,7 +9,9 @@ const App = () => {
     'Premature optimization is the root of all evil.',
     'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.',
     'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients.',
-    'The only way to go fast, is to go well.'
+    'The only way to go fast, is to go well.',
+    'Another one',
+    'Another two'
   ]
   console.log(anecdotes.length)
   const [selected, setSelected] = useState(1)
@@ -17,14 +19,14 @@ const App = () => {
   const handleClick = () => {
     setSelected(Math.floor(Math.random() * anecdotes.length))
   }
+  
   const AnecVote = () => {
     const vote = [...votes]
     console.log(selected, " votes selected")
     vote[selected] += 1
     console.log("Vote added", "Vote selected: ", selected, " Number vote: ", vote[selected])
     setVotes(vote)
-  }
-
+  }  
   const mostVotes = votes.indexOf(Math.max(...votes))
   console.log("Most votes: ", mostVotes)
   return (
@@ -38,6 +40,14 @@ const App = () => {
   )
 }
 const MostVotes =({text, vote}) => {
+  if(vote === 0){
+    return(
+      <>
+      <h1>Anecdote with most votes</h1>
+      <p>No votes</p>
+      </>
+    )
+  }
   return(
     <>
     <h1>Anecdote with most votes</h1>

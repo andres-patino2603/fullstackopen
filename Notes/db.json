@@ -1,59 +1,94 @@
 {
-    "notes": [
-      {
-        "id": 1,
-        "content": "HTML is easy",
-        "important": true
-      },
-      {
-        "id": 2,
-        "content": "Browser can execute only JavaScript",
-        "important": false
-      },
-      {
-        "id": 3,
-        "content": "GET and POST are the most important methods of HTTP protocol",
-        "important": true
-      },
-      {
-        "id": 4,
-        "content": "HTTP protocol can be used in web development",
-        "important": false
-      },
-      {
-        "id": 5,
-        "content": "REST is the most important method of web services",
-        "important": true
-      },
-      {
-        "id": 6,
-        "content": "React is a library for building user interfaces",
-        "important": true
-      },
-      {
-        "id": 7,
-        "content": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine",
-        "important": true
-      },
-      {
-        "id": 8,
-        "content": "Express is a minimal and flexible Node.js web application framework",
-        "important": true
-      },
-      {
-        "id": 9,
-        "content": "MongoDB is a free and open-source cross-platform document-oriented database program",
-        "important": true
-      },
-      {
-        "id": 10,
-        "content": "Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js",
-        "important": true
-      },
-      {
-        "id": 11,
-        "content": "Redux is an open-source JavaScript library for managing application state",
-        "important": true
-      }
-    ]
-  }
+  "notes": [
+    {
+      "id": "1",
+      "content": "HTML is easy",
+      "important": false
+    },
+    {
+      "id": "2",
+      "content": "Browser can execute only JavaScript",
+      "important": true
+    },
+    {
+      "id": "3",
+      "content": "GET and POST are the most important methods of HTTP protocol",
+      "important": true
+    },
+    {
+      "id": "4",
+      "content": "Hight",
+      "important": false
+    },
+    {
+      "id": "5",
+      "content": "Lo que sea",
+      "important": true
+    },
+    {
+      "id": "6",
+      "content": "XD",
+      "important": true
+    },
+    {
+      "id": "7",
+      "content": "Mosanbique",
+      "important": false
+    },
+    {
+      "id": "8",
+      "content": "Ya agrega cosas al db.json",
+      "important": true
+    },
+    {
+      "id": "9",
+      "content": "Type new note...asdasd",
+      "important": true
+    },
+    {
+      "id": "10",
+      "content": "Ahora si funciona el fucking JSON server",
+      "important": true
+    },
+    {
+      "id": "11",
+      "content": "HI",
+      "important": false
+    },
+    {
+      "id": "12",
+      "content": "PPIPIPIPI",
+      "important": true
+    },
+    {
+      "id": "13",
+      "content": "Type new note...",
+      "important": true
+    },
+    {
+      "id": "14",
+      "content": "Type new note...",
+      "important": true
+    },
+    {
+      "id": "15",
+      "content": "Nueva nota",
+      "important": false
+    },
+    {
+      "id": "16",
+      "content": "Type new note...",
+      "important": true
+    },
+    {
+      "id": "17",
+      "content": "Type new note...",
+      "important": false
+    },
+    {
+      "id": 18,
+      "content": "Type new note...",
+      "important": false
+    }
+  ]
+}

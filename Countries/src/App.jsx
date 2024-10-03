@@ -10,7 +10,17 @@ function App() {
   const handleCountryChange = (e) => {
     setsearchCountry(e.target.value);
   };
-  
+  const formStyle = { 
+    display: 'flex', 
+    flexDirection: 'column', 
+    justifyContent: 'flex-start', 
+    alignItems: 'upper', 
+    height: '100vh',
+    width: 'auto',
+    border: '1px solid black',
+    borderRadius: '10px',
+    padding: '20px',
+  }
   useEffect(() => {
     axios
       .get("https://studies.cs.helsinki.fi/restcountries/api/all")
@@ -34,11 +44,13 @@ function App() {
 
   return (
     <>
+    <div style={formStyle}>
       <CountryForm
         searchCountry={searchCountry}
         handleCountryChange={handleCountryChange}
       />
       <CountryList countries={showCountrys} buttonShow={buttonShow}/>
+      </div> 
     </>
   );
 }

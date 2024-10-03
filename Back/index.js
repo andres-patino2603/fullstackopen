@@ -3,6 +3,7 @@ const app = express()
 const cors = require('cors')
 
 app.use(cors())
+app.use(express.static('dist'))
 app.use(express.json())//Para acceder a los datos fácilmente, necesitamos la ayuda del json-parser de Express, que se usa con el comando 
 
 let notes = [

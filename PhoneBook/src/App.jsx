@@ -74,12 +74,14 @@ const okStyle = {
     } else{
       personsService.create(personObject).then(returnedPerson=>{
         setPersons(persons.concat(returnedPerson))
-        setNotification({message: `Added ${newName}`, style: okStyle}).setTimeout(() => {
+        setNotification({message: `Added ${newName}`, style: okStyle})
+        setTimeout(() => {
           setNotification({message: null, style: {}})}, 5000)
         }).catch(error => {
-          setNotification(
-            { message: error.response.data.error, style: errorStyle }
-          )
+          setNotification({
+            message: error.response && error.response.data ? error.response.data.error : 'An error occurred',
+            style: errorStyle
+          })
           console.log("Error", error)
           setTimeout(() => {
             setNotification({message: null, style: {}})
@@ -110,6 +112,9 @@ const deletePerson = id => {
     personsService.deletePerson(id).then(() => {
       setPersons(persons.filter(person => person.id !== id))
       setNotification({message: `Deleted ${person.name}`, style: okStyle})
+      setTimeout(() => {
+        setNotification({message: null, style: {}})
+      }, 5000)
     }).catch(error => {
       setNotification(
         { message: `Information of ${person.name} has already been removed from server`, style: errorStyle }

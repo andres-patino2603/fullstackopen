@@ -80,11 +80,17 @@ const App = () => {
           show {showAll ? 'important' : 'all'}
         </button>
       </div>
+      <div className="noteDisplay">
       <ul>
-        {notesToShow.map(note => (
-          <Note key={note.id} note={note} toggleImportance={() => toggleImportanceOf(note.id)} />
-        ))}
-      </ul>
+  {Array.isArray(notesToShow) ? (
+    notesToShow.map(note => (
+      <Note key={note.id} note={note} toggleImportance={() => toggleImportanceOf(note.id)} />
+    ))
+  ) : (
+    <li>No notes available</li>
+  )}
+</ul>
+</div>
       <form onSubmit={addNote}>
         <input value={newNote} onChange={handleNoteChange} />
 

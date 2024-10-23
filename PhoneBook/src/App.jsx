@@ -60,26 +60,33 @@ const okStyle = {
             setNotification({message: null, style: {}})
           }, 5000)
         }).catch(error => {
-          setNotification(
-            { message: `Information of ${newName} has already been removed from server`, style: errorStyle }
-          )
-          console.log("Error", error)
+          const errorMessage = error.response && error.response.data && error.response.data.error
+            ? error.response.data.error
+            : 'An unexpected error occurred'
+          
+          setNotification({
+            message: `Error: ${errorMessage}`,
+            style: errorStyle
+          })
           setTimeout(() => {
-            setNotification({message: null, style: {}})
+            setNotification({ message: null, style: {} })
           }, 5000)
         })
       }
     } else if (newName === "" || newNumber === "") {
       alert(`Please enter a name or number`);
     } else{
-      personsService.create(personObject).then(returnedPerson=>{
-        setPersons(persons.concat(returnedPerson))
-        setNotification({message: `Added ${newName}`, style: okStyle})
-        setTimeout(() => {
-          setNotification({message: null, style: {}})}, 5000)
+      personsService
+        .create(personObject)
+          .then(returnedPerson=>{
+            setPersons(persons.concat(returnedPerson))
+            setNotification({message: `Added ${newName}`, style: okStyle})
+            setTimeout(() => {
+              setNotification({message: null, style: {}})}, 5000)
         }).catch(error => {
+          console.log("Error", error.response.data.error)
           setNotification({
-            message: error.response && error.response.data ? error.response.data.error : 'An error occurred',
+            message: `Error: ${error.response.data.error}`,
             style: errorStyle
           })
           console.log("Error", error)
@@ -100,6 +107,7 @@ const okStyle = {
   const handleFilterPerson = (event) => {
     setFilterName(event.target.value);
   }
+  //Logica para filtrar las personas que se muestran en pantalla
   const showPersons = filterName === "" 
   ? persons 
   : persons.filter(person => 
